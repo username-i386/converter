@@ -1,0 +1,9 @@
+.inputNumber {
+   width: 40%;
+   margin: 10px;
+}
+
+.converter {
+   display: flex;
+   justify-content: center;
+}
