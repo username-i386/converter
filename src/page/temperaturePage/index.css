@@ -1,9 +1,15 @@
 .inputNumber {
-   width: 40%;
+   width: 80%;
    margin: 10px;
+}
+
+.inputNumber input {
+   width: 50%;
 }
 
 .converter {
    display: flex;
+   flex-direction: column;
    justify-content: center;
+   align-items: center;
 }
