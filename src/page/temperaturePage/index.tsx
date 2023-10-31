@@ -1,6 +1,7 @@
-import { Input, Select, Stack, Text } from "@chakra-ui/react"
+import { Center, Heading, Icon, Input, Select, Stack, Text } from "@chakra-ui/react"
 import './index.css'
 import { useState } from "react"
+import { FaTemperatureLow } from 'react-icons/fa';
 
 export const TemperaturePage = () => {
 
@@ -303,37 +304,46 @@ export const TemperaturePage = () => {
    }
 
    return (
-      <div className="converter">
-         <Stack className="inputNumber" spacing={5} direction={"row"}>
-            <Input placeholder='Введите число' 
-               type="number" 
-               id="inputNumber" 
-               value={inputNumber}
-               onChange={() => converter()} />
-            <Text fontSize='xl' id="outputNumber">32</Text>
-         </Stack>
-         <Stack className="inputNumber" spacing={5} direction={"row"}>
-            <Select id="convertFromSelect" defaultValue={'k'}>
-               <option value='c'>градусов по Цельсию</option>
-               <option value='f'>градусов по Фаренгейту</option>
-               <option value='k'>градусов по Кельвину</option>
-               <option value='ran'>градусов по Ранкину</option>
-               <option value='d'>градусов по Делилю</option>
-               <option value='n'>градусов по Ньютону</option>
-               <option value='reo'>градусов по Реомюру</option>
-               <option value='rem'>градусов по Рёмеру</option>
-            </Select>
-            <Select id="convertToSelect" defaultValue={'c'}>
-               <option value='c'>градусов по Цельсию</option>
-               <option value='f'>градусов по Фаренгейту</option>
-               <option value='k'>градусов по Кельвину</option>
-               <option value='ran'>градусов по Ранкину</option>
-               <option value='d'>градусов по Делилю</option>
-               <option value='n'>градусов по Ньютону</option>
-               <option value='reo'>градусов по Реомюру</option>
-               <option value='rem'>градусов по Рёмеру</option>
-            </Select>
-         </Stack>
+      <div>
+         <Center>
+            <Stack direction={"row"} align={'center'} spacing={6} >
+               <Heading className="title" as='h1' size='lg'>Температура</Heading>
+               <Icon as={FaTemperatureLow} boxSize={8} />
+            </Stack>
+         </Center>
+         <div className="converter">
+            <Stack className="inputNumber" spacing={5} direction={"row"}>
+               <Input placeholder='Введите число' 
+                  type="number" 
+                  id="inputNumber" 
+                  value={inputNumber}
+                  onChange={() => converter()} />
+               <Text fontSize='xl' id="outputNumber">32</Text>
+            </Stack>
+            <Stack className="inputNumber" spacing={5} direction={"row"}>
+               <Select id="convertFromSelect" defaultValue={'c'}>
+                  <option value='c'>градусов по Цельсию</option>
+                  <option value='f'>градусов по Фаренгейту</option>
+                  <option value='k'>градусов по Кельвину</option>
+                  <option value='ran'>градусов по Ранкину</option>
+                  <option value='d'>градусов по Делилю</option>
+                  <option value='n'>градусов по Ньютону</option>
+                  <option value='reo'>градусов по Реомюру</option>
+                  <option value='rem'>градусов по Рёмеру</option>
+               </Select>
+               <Select id="convertToSelect" defaultValue={'f'}>
+                  <option value='c'>градусов по Цельсию</option>
+                  <option value='f'>градусов по Фаренгейту</option>
+                  <option value='k'>градусов по Кельвину</option>
+                  <option value='ran'>градусов по Ранкину</option>
+                  <option value='d'>градусов по Делилю</option>
+                  <option value='n'>градусов по Ньютону</option>
+                  <option value='reo'>градусов по Реомюру</option>
+                  <option value='rem'>градусов по Рёмеру</option>
+               </Select>
+            </Stack>
+         </div>
       </div>
+      
    )
 }
