@@ -7,7 +7,7 @@ export const Header = () => {
    return (
       <header className='header'>
          <div className='logo'>
-            <Heading>AFINA</Heading>
+            <Heading>ATHENA</Heading>
             <Icon as={HiOutlineScale} boxSize={10} />
          </div>
          <div>

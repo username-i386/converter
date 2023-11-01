@@ -2,14 +2,13 @@ import { Divider, Heading, Highlight, Icon, Link, Stack, Text } from '@chakra-ui
 import { AiFillGithub } from 'react-icons/ai'
 import { GrMail } from 'react-icons/gr'
 import { BsTelegram } from 'react-icons/bs'
-import './Footer.css'
 
 export const Footer = () => {
    return (
       <footer className="footer">
          <Divider margin={'15px'} />
          <Stack spacing={4} align={'center'}>
-            <Heading size='md'>AFINA</Heading>
+            <Heading size='md'>ATHENA</Heading>
             <Stack>
                <Text fontSize='md'>
                   <Highlight
