@@ -6,6 +6,17 @@ import { RiScales2Fill } from 'react-icons/ri';
 
 export const MassPage = () => {
 
+   const KILOGRAMM = 'KILOGRAMM';
+   const GRAMM = 'GRAMM';
+   const MILLIGRAMM = 'MILLIGRAMM';
+   const MIKROGRAMM = 'MIKROGRAMM';
+   const FUNT = 'FUNT';
+   const UNCIA = 'UNCIA';
+   const TONNA = 'TONNA';
+   const ENGLISH_TONNA = 'ENGLISH_TONNA';
+   const AMERICAN_TONNA = 'AMERICAN_TONNA';
+   const STONE = 'STONE';
+
    const [inputNumber, setInputNumber] = useState<string | undefined>('');
    const [outputNumber, setOutputNumber] = useState<string | undefined>('');
 
@@ -48,29 +59,35 @@ export const MassPage = () => {
    function convertFromLeftToRight(convertFromUnit: string, inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       let result = 1;
       switch (convertFromUnit) {
-         case 'c':
-            result = convertFromCelsius(+inputNumberValue, convertToUnit, convertedValue);
+         case KILOGRAMM:
+            result = convertFromKilogram(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'f':
-            result = convertFromFahrenheit(+inputNumberValue, convertToUnit, convertedValue);
+         case GRAMM:
+            result = convertFromGram(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'k':
-            result = convertFromKelvin(+inputNumberValue, convertToUnit, convertedValue);
+         case MILLIGRAMM:
+            result = convertFromMilligram(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'ran':
-            result = convertFromRankin(+inputNumberValue, convertToUnit, convertedValue);
+         case MIKROGRAMM:
+            result = convertFromMicrogram(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'd':
-            result = convertFromDelil(+inputNumberValue, convertToUnit, convertedValue);
+         case FUNT:
+            result = convertFromFunt(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'n':
-            result = convertFromNuton(+inputNumberValue, convertToUnit, convertedValue);
+         case UNCIA:
+            result = convertFromUncia(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'reo':
-            result = convertFromReomur(+inputNumberValue, convertToUnit, convertedValue);
+         case TONNA:
+            result = convertFromTonna(+inputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'rem':
-            result = convertFromRemer(+inputNumberValue, convertToUnit, convertedValue);
+         case ENGLISH_TONNA:
+            result = convertFromEnglishTonna(+inputNumberValue, convertToUnit, convertedValue);
+            return result;
+         case AMERICAN_TONNA:
+            result = convertFromAmericanTonna(+inputNumberValue, convertToUnit, convertedValue);
+            return result;
+         case STONE:
+            result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          default:
             return result;
@@ -80,282 +97,405 @@ export const MassPage = () => {
    function convertFromRightToLeft(convertFromUnit: string, outputNumberValue: number, convertToUnit: string, convertedValue: number) {
       let result = 1;
       switch (convertFromUnit) {
-         case 'c':
-            result = convertFromCelsius(+outputNumberValue, convertToUnit, convertedValue);
+         case KILOGRAMM:
+            result = convertFromKilogram(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'f':
-            result = convertFromFahrenheit(+outputNumberValue, convertToUnit, convertedValue);
+         case GRAMM:
+            result = convertFromGram(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'k':
-            result = convertFromKelvin(+outputNumberValue, convertToUnit, convertedValue);
+         case MILLIGRAMM:
+            result = convertFromMilligram(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'ran':
-            result = convertFromRankin(+outputNumberValue, convertToUnit, convertedValue);
+         case MIKROGRAMM:
+            result = convertFromMicrogram(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'd':
-            result = convertFromDelil(+outputNumberValue, convertToUnit, convertedValue);
+         case FUNT:
+            result = convertFromFunt(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'n':
-            result = convertFromNuton(+outputNumberValue, convertToUnit, convertedValue);
+         case UNCIA:
+            result = convertFromUncia(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'reo':
-            result = convertFromReomur(+outputNumberValue, convertToUnit, convertedValue);
+         case TONNA:
+            result = convertFromTonna(+outputNumberValue, convertToUnit, convertedValue);
             return result;
-         case 'rem':
-            result = convertFromRemer(+outputNumberValue, convertToUnit, convertedValue);
+         case ENGLISH_TONNA:
+            result = convertFromEnglishTonna(+outputNumberValue, convertToUnit, convertedValue);
+            return result;
+         case AMERICAN_TONNA:
+            result = convertFromAmericanTonna(+outputNumberValue, convertToUnit, convertedValue);
+            return result;
+         case STONE:
+            result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          default:
             return result;
       }
    }
 
-   function convertFromCelsius(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+   function convertFromKilogram(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
+         case KILOGRAMM:
             convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'f':
-            convertedValue = Number((+inputNumberValue * 9 / 5) + 32);
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue / 0.001);
             return convertedValue;
-         case 'k':
-            convertedValue = Number(+inputNumberValue + 273.15);
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue / 0.000001);
             return convertedValue;
-         case 'ran':
-            convertedValue = Number((+inputNumberValue * 1.8) + 491.67);
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue / 0.000000001);
             return convertedValue;
-         case 'd':
-            convertedValue = Number((+inputNumberValue * 1.5) - 100);
+         case FUNT:
+            convertedValue = Number(+inputNumberValue * 2.2046);
             return convertedValue;
-         case 'n':
-            convertedValue = Number(+inputNumberValue * 0.33);
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue * 35.274);
             return convertedValue;
-         case 'reo':
-            convertedValue = Number(+inputNumberValue * 0.8);
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 1000);
             return convertedValue;
-         case 'rem':
-            convertedValue = Number((+inputNumberValue * 0.525) + 7.5);
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 1016);
             return convertedValue;
-         default:
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 907.2);
             return convertedValue;
-      }
-   }
-
-   function convertFromFahrenheit(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
-      inputNumberValue -= 32;
-      switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue / 1.8;
-            return convertedValue;
-         case 'f':
-            convertedValue = inputNumberValue + 32;
-            return convertedValue;
-         case 'k':
-            convertedValue = (inputNumberValue / 1.8) + 273.15;
-            return convertedValue;
-         case 'ran':
-            convertedValue = inputNumberValue + 491.67;
-            return convertedValue;
-         case 'd':
-            convertedValue = (inputNumberValue * 0.83333) - 100;
-            return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue * 0.1833;
-            return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue * 0.4444;
-            return convertedValue;
-         case 'rem':
-            convertedValue = (inputNumberValue * 0.29167) - 7.5;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 6.35);
             return convertedValue;
          default:
             return convertedValue;
       }
    }
 
-   function convertFromKelvin(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
-      inputNumberValue -= 273.15;
+   function convertFromGram(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue;
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue / 1000);
             return convertedValue;
-         case 'f':
-            convertedValue = (inputNumberValue * 1.8) + 32;
+         case GRAMM:
+            convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'k':
-            convertedValue = inputNumberValue + 273;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 1000);
             return convertedValue;
-         case 'ran':
-            convertedValue = (inputNumberValue * 1.8) + 491.67;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 1000000);
             return convertedValue;
-         case 'd':
-            convertedValue = (inputNumberValue * 1.5) - 100;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue / 453.6);
             return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue * 0.33;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue / 28.35);
             return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue * 0.8;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 0.000001);
             return convertedValue;
-         case 'rem':
-            convertedValue = (inputNumberValue * 0.525) + 7.5;
+         case ENGLISH_TONNA:
+            convertedValue = Number((+inputNumberValue / 1016000) + 6);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 907200);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 6350);
             return convertedValue;
          default:
             return convertedValue;
       }
    }
 
-   function convertFromRankin(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
-      inputNumberValue -= 491.67;
+   function convertFromMilligram(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue / 1.8;
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue / 1000000);
             return convertedValue;
-         case 'f':
-            convertedValue = inputNumberValue + 32;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue / 1000);
             return convertedValue;
-         case 'k':
-            convertedValue = inputNumberValue / 1.8 + 273.15;
+         case MILLIGRAMM:
+            convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'ran':
-            convertedValue = inputNumberValue + 491.67;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 1000);
             return convertedValue;
-         case 'd':
-            convertedValue = (inputNumberValue * 0.83333) - 100;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue / 453600);
             return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue * 0.18333;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue / 28350);
             return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue * 0.44444;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 1000000000);
             return convertedValue;
-         case 'rem':
-            convertedValue = (inputNumberValue * 0.29167) + 7.5;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 1016000000);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 907200000);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 6350000);
             return convertedValue;
          default:
             return convertedValue;
       }
    }
 
-   function convertFromDelil(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
-      inputNumberValue += 100;
+   function convertFromMicrogram(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue / 1.5;
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue / 1000000000);
             return convertedValue;
-         case 'f':
-            convertedValue = inputNumberValue * 1.2 + 32;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue / 1000000);
             return convertedValue;
-         case 'k':
-            convertedValue = inputNumberValue / 1.5 + 273.15;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue / 1000);
             return convertedValue;
-         case 'ran':
-            convertedValue = inputNumberValue + 491.67;
+         case MIKROGRAMM:
+            convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'd':
-            convertedValue = inputNumberValue + 100;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue / 453600000);
             return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue * 0.22;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue / 28350000);
             return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue * 0.53333;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 1000000000000);
             return convertedValue;
-         case 'rem':
-            convertedValue = (inputNumberValue * 0.35) + 7.5;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 1016000000000);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 907200000000);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 6350000000);
             return convertedValue;
          default:
             return convertedValue;
       }
    }
 
-   function convertFromNuton(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+   function convertFromFunt(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue / 0.33;
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue / 2.205);
             return convertedValue;
-         case 'f':
-            convertedValue = inputNumberValue * 5.4545 + 32;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue * 453.6);
             return convertedValue;
-         case 'k':
-            convertedValue = inputNumberValue / 0.33 + 273.15;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 453600);
             return convertedValue;
-         case 'ran':
-            convertedValue = inputNumberValue * 5.4545 + 491.67;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 453600000);
             return convertedValue;
-         case 'd':
-            convertedValue = inputNumberValue * 4.5455 - 100;
+         case FUNT:
+            convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue * 16);
             return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue * 2.4242;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 2205);
             return convertedValue;
-         case 'rem':
-            convertedValue = inputNumberValue * 1.5909 + 7.5;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 2240);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 2000);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 14);
             return convertedValue;
          default:
             return convertedValue;
       }
    }
 
-   function convertFromReomur(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+   function convertFromUncia(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue / 0.8;
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue / 35.274);
             return convertedValue;
-         case 'f':
-            convertedValue = inputNumberValue * 2.25 + 32;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue * 28.35);
             return convertedValue;
-         case 'k':
-            convertedValue = inputNumberValue / 0.8 + 273.15;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 28350);
             return convertedValue;
-         case 'ran':
-            convertedValue = inputNumberValue * 2.25 + 491.67;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 28350000);
             return convertedValue;
-         case 'd':
-            convertedValue = inputNumberValue * 1.875 - 100;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue / 16);
             return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue * 0.4125;
+         case UNCIA:
+            convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 35270);
             return convertedValue;
-         case 'rem':
-            convertedValue = inputNumberValue * 0.65625 + 7.5;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 35840);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 32000);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 224);
             return convertedValue;
          default:
             return convertedValue;
       }
    }
 
-   function convertFromRemer(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
-      inputNumberValue -= 7.5;
+   function convertFromTonna(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
       switch (convertToUnit) {
-         case 'c':
-            convertedValue = inputNumberValue / 0.525;
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue * 1000);
             return convertedValue;
-         case 'f':
-            convertedValue = inputNumberValue * 3.4286 + 32;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue * 1000000);
             return convertedValue;
-         case 'k':
-            convertedValue = inputNumberValue / 0.525 + 273.15;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 1000000000);
             return convertedValue;
-         case 'ran':
-            convertedValue = inputNumberValue * 3.4286 + 491.67;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 1000000000000);
             return convertedValue;
-         case 'd':
-            convertedValue = inputNumberValue * 2.8571 - 100;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue * 2205);
             return convertedValue;
-         case 'n':
-            convertedValue = inputNumberValue * 0.62857;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue * 35270);
             return convertedValue;
-         case 'reo':
-            convertedValue = inputNumberValue * 1.5238;
+         case TONNA:
+            convertedValue = +inputNumberValue;
             return convertedValue;
-         case 'rem':
-            convertedValue += 7.5;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 1.016);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 1.102);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 157.5);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromEnglishTonna(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue * 1016);
+            return convertedValue;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue * 1016000);
+            return convertedValue;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 1016000000);
+            return convertedValue;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 1016000000000);
+            return convertedValue;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue * 2240);
+            return convertedValue;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue * 35840);
+            return convertedValue;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue * 1.016);
+            return convertedValue;
+         case ENGLISH_TONNA:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 1.12);
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue / 160);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromAmericanTonna(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue * 907.2);
+            return convertedValue;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue * 907200);
+            return convertedValue;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 907200000000);
+            return convertedValue;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 907200000000000);
+            return convertedValue;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue * 2000);
+            return convertedValue;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue * 32000);
+            return convertedValue;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 1.102);
+            return convertedValue;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 1.12);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case STONE:
+            convertedValue = Number(+inputNumberValue * 142.9);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromStone(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case KILOGRAMM:
+            convertedValue = Number(+inputNumberValue * 6.35);
+            return convertedValue;
+         case GRAMM:
+            convertedValue = Number(+inputNumberValue * 6350);
+            return convertedValue;
+         case MILLIGRAMM:
+            convertedValue = Number(+inputNumberValue * 6350000);
+            return convertedValue;
+         case MIKROGRAMM:
+            convertedValue = Number(+inputNumberValue * 6350000000);
+            return convertedValue;
+         case FUNT:
+            convertedValue = Number(+inputNumberValue * 14);
+            return convertedValue;
+         case UNCIA:
+            convertedValue = Number(+inputNumberValue * 224);
+            return convertedValue;
+         case TONNA:
+            convertedValue = Number(+inputNumberValue / 157.5);
+            return convertedValue;
+         case ENGLISH_TONNA:
+            convertedValue = Number(+inputNumberValue / 160);
+            return convertedValue;
+         case AMERICAN_TONNA:
+            convertedValue = Number(+inputNumberValue / 142.9);
+            return convertedValue;
+         case STONE:
+            convertedValue = +inputNumberValue;
             return convertedValue;
          default:
             return convertedValue;
@@ -372,38 +512,42 @@ export const MassPage = () => {
          </Center>
          <div className="converter">
             <Stack className="inputNumber" spacing={0} direction={"column"} gap={0}>
-               <Input placeholder='0' 
+               <Input placeholder='Введите число...' 
                   type="number" 
                   id="inputNumber" 
                   value={inputNumber}
                   onChange={(event) => converter(event)} />
-               <Select id="convertFromSelect" defaultValue={'c'} >
-                  <option value='c'>градусов по Цельсию</option>
-                  <option value='f'>градусов по Фаренгейту</option>
-                  <option value='k'>градусов по Кельвину</option>
-                  <option value='ran'>градусов по Ранкину</option>
-                  <option value='d'>градусов по Делилю</option>
-                  <option value='n'>градусов по Ньютону</option>
-                  <option value='reo'>градусов по Реомюру</option>
-                  <option value='rem'>градусов по Рёмеру</option>
+               <Select id="convertFromSelect" defaultValue={KILOGRAMM} >
+                  <option value={TONNA}>Тонна</option>
+                  <option value={KILOGRAMM}>Килограмм</option>
+                  <option value={GRAMM}>Грамм</option>
+                  <option value={MILLIGRAMM}>Милиграмм</option>
+                  <option value={MIKROGRAMM}>Микрограмм</option>
+                  <option value={ENGLISH_TONNA}>Английская тонна</option>
+                  <option value={AMERICAN_TONNA}>Американская тонна</option>
+                  <option value={STONE}>Стоун</option>
+                  <option value={FUNT}>Фунт</option>
+                  <option value={UNCIA}>Унция</option>
                </Select>
             </Stack>
             <Icon as={FaEquals} boxSize={6} />
             <Stack className="inputNumber" spacing={0} direction={"column"} gap={0}>
-               <Input placeholder="32"
+               <Input placeholder='Введите число...'
                   type="number" 
                   id="outputNumber" 
                   value={outputNumber}
                   onChange={(event) => converter(event)} />
-               <Select id="convertToSelect" defaultValue={'f'}>
-                  <option value='c'>градусов по Цельсию</option>
-                  <option value='f'>градусов по Фаренгейту</option>
-                  <option value='k'>градусов по Кельвину</option>
-                  <option value='ran'>градусов по Ранкину</option>
-                  <option value='d'>градусов по Делилю</option>
-                  <option value='n'>градусов по Ньютону</option>
-                  <option value='reo'>градусов по Реомюру</option>
-                  <option value='rem'>градусов по Рёмеру</option>
+               <Select id="convertToSelect" defaultValue={GRAMM}>
+                  <option value={TONNA}>Тонна</option>
+                  <option value={KILOGRAMM}>Килограмм</option>
+                  <option value={GRAMM}>Грамм</option>
+                  <option value={MILLIGRAMM}>Милиграмм</option>
+                  <option value={MIKROGRAMM}>Микрограмм</option>
+                  <option value={ENGLISH_TONNA}>Английская тонна</option>
+                  <option value={AMERICAN_TONNA}>Американская тонна</option>
+                  <option value={STONE}>Стоун</option>
+                  <option value={FUNT}>Фунт</option>
+                  <option value={UNCIA}>Унция</option>
                </Select>
             </Stack>
          </div>
