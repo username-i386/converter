@@ -6,6 +6,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { TemperaturePage } from './page/temperaturePage';
 import { MassPage } from './page/massPage';
+import { VolumePage } from './page/volumePage';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/volume',
-        element: <h1>Объем и емкость</h1>
+        element: <VolumePage />
       },
       {
         path: '/square',
