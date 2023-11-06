@@ -93,40 +93,37 @@ export const VolumePage = () => {
             result = convertFromCubicMeter(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case LITER:
-            //result = convertFromAmericanTonna(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromLiter(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case MILLILITER:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromMilliliter(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_GALLON:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialGallon(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_QUARTA:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialQuarta(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_PINTA:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialPinta(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_CUP:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialCup(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_FLUID_OUNCE:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialFluidOnce(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case BRITISH_TABLESPOON:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
-            return result;
-         case BRITISH_TABLESPOON:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromBtitishTableSpoon(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case BRITISH_TEA_SPOON:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromBtitishTeaSpoon(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case CUBIC_POUND:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromCubicPound(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          case CUBIC_INCH:
-            //result = convertFromStone(+inputNumberValue, convertToUnit, convertedValue);
+            result = convertFromCubicInch(+inputNumberValue, convertToUnit, convertedValue);
             return result;
          default:
             return result;
@@ -161,40 +158,37 @@ export const VolumePage = () => {
             result = convertFromCubicMeter(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case LITER:
-            //result = convertFromAmericanTonna(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromLiter(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case MILLILITER:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromMilliliter(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_GALLON:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialGallon(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_QUARTA:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialQuarta(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_PINTA:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialPinta(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_CUP:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialCup(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case IMPERIAL_FLUID_OUNCE:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromImperialFluidOnce(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case BRITISH_TABLESPOON:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
-            return result;
-         case BRITISH_TABLESPOON:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromBtitishTableSpoon(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case BRITISH_TEA_SPOON:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromBtitishTeaSpoon(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case CUBIC_POUND:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromCubicPound(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          case CUBIC_INCH:
-            //result = convertFromStone(+outputNumberValue, convertToUnit, convertedValue);
+            result = convertFromCubicInch(+outputNumberValue, convertToUnit, convertedValue);
             return result;
          default:
             return result;
@@ -713,6 +707,709 @@ export const VolumePage = () => {
       }
    }
 
+   function convertFromLiter(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 3.785);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue * 1.057);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue * 2.113);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue * 4.167);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 3.814);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 67.628);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 202.9);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 1000);
+            return convertedValue;
+         case LITER:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 1000);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue * 4.546);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue * 1.136);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue * 1.76);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue * 3.52);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 35.195);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 56.312);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 168.9);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue * 28.317);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 61.024);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromMilliliter(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 3785);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 946.4);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue / 473.2);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue / 240);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 29.574);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue / 14.787);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue / 4.929);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 1000000);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 1000);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 4546);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 1137);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue / 568.3);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue / 284.1);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 28.413);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue / 17.758);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue / 5.919);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 28320);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue / 16.387);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromImperialGallon(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue * 1.201);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue * 4.804);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue * 9.608);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue * 18.942);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 153.7);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 307.4);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 922.3);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 220);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue * 4.546);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 4546);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue * 4);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue * 8);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue * 16);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 160);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 256);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 768);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 6.229);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 277.4);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromImperialQuarta(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 3.331);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue * 1.201);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue * 2.402);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue * 4.736);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 38.43);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 76.861);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 230.6);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 879.9);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue * 1.137);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 1137);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 4);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue * 2);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue * 4);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 40);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 64);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 192);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 24.915);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 69.355);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromImperialPinta(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 6.661);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 1.665);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue * 1.201);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue * 2.368);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 19.215);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 38.43);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 115.3);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 1760);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 1.76);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 568.3);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 8);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 2);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue * 2);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 20);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 32);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 96);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 49.831);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 34.677);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromImperialCup(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 13.323);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 3.331);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue / 1.665);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue * 1.184);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 9.608);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 19.215);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 57.646);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 3520);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 3.52);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 284.1);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 16);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 4);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue / 2);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 10);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 16);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 48);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 99.661);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 17.339);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromImperialFluidOnce(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 133.2);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 33.307);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue / 16.654);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue / 8.447);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 1.041);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 1.922);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 5.765);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 35200);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 35.195);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 28.413);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 160);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 40);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue / 20);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue / 10);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 1.6);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 4.8);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 996.6);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 1.734);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromBtitishTableSpoon(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 213.2);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 53.291);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue / 26.646);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue / 13.515);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 1.665);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 1.201);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 3.603);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 56310);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 56.312);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 17.758);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 256);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 64);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue / 32);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue / 16);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 1.6);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 3);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 1595);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 1.084);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromBtitishTeaSpoon(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 639.5);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 159.9);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue / 79.937);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue / 40.545);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 4.996);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue / 2.498);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 1.201);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 168900);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 168.9);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 5.919);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 768);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 192);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue / 96);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue / 48);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 4.8);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue / 3);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue / 4784);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 2.768);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromCubicPound(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue * 7.481);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue * 29.922);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue * 59.844);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue * 118);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 957.5);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 1915);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 5745);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 35.315);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue * 28.317);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 28320);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue * 6.229);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue * 24.915);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue * 49.831);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue * 99.661);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue * 996.6);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 1595);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 4784);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = Number(+inputNumberValue * 1728);
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
+
+   function convertFromCubicInch(inputNumberValue: number, convertToUnit: string, convertedValue: number) {
+      switch (convertToUnit) {
+         case AMERICAN_GALLON:
+            convertedValue = Number(+inputNumberValue / 231);
+            return convertedValue;
+         case AMERICAN_LIQUID_QUART:
+            convertedValue = Number(+inputNumberValue / 57.75);
+            return convertedValue;
+         case AMERICAN_LIQUID_PINTA:
+            convertedValue = Number(+inputNumberValue / 28.875);
+            return convertedValue;
+         case AMERICAN_CUP:
+            convertedValue = Number(+inputNumberValue / 14.646);
+            return convertedValue;
+         case AMERICAN_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 1.805);
+            return convertedValue;
+         case AMERICAN_TABLESPOON:
+            convertedValue = Number(+inputNumberValue * 1.108);
+            return convertedValue;
+         case AMERICAN_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 3.325);
+            return convertedValue;
+         case CUBIC_METER:
+            convertedValue = Number(+inputNumberValue / 61020);
+            return convertedValue;
+         case LITER:
+            convertedValue = Number(+inputNumberValue / 61.024);
+            return convertedValue;
+         case MILLILITER:
+            convertedValue = Number(+inputNumberValue * 16.387);
+            return convertedValue;
+         case IMPERIAL_GALLON:
+            convertedValue = Number(+inputNumberValue / 277.4);
+            return convertedValue;
+         case IMPERIAL_QUARTA:
+            convertedValue = Number(+inputNumberValue / 69.355);
+            return convertedValue;
+         case IMPERIAL_PINTA:
+            convertedValue = Number(+inputNumberValue / 34.677);
+            return convertedValue;
+         case IMPERIAL_CUP:
+            convertedValue = Number(+inputNumberValue / 17.339);
+            return convertedValue;
+         case IMPERIAL_FLUID_OUNCE:
+            convertedValue = Number(+inputNumberValue / 1.734);
+            return convertedValue;
+         case BRITISH_TABLESPOON:
+            convertedValue = Number(+inputNumberValue / 1.084);
+            return convertedValue;
+         case BRITISH_TEA_SPOON:
+            convertedValue = Number(+inputNumberValue * 2.768);
+            return convertedValue;
+         case CUBIC_POUND:
+            convertedValue = Number(+inputNumberValue * 1728);
+            return convertedValue;
+         case CUBIC_INCH:
+            convertedValue = +inputNumberValue;
+            return convertedValue;
+         default:
+            return convertedValue;
+      }
+   }
 
    return (
       <div>
