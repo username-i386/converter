@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { TemperaturePage } from './page/temperaturePage';
 import { MassPage } from './page/massPage';
 import { VolumePage } from './page/volumePage';
+import { SquarePage } from './page/squarePage';
 
 const router = createBrowserRouter([
   {
@@ -22,16 +23,12 @@ const router = createBrowserRouter([
         element: <MassPage /> 
       },
       {
-        path: '/valuta',
-        element: <h1>Курсы валют</h1>
-      },
-      {
         path: '/volume',
         element: <VolumePage />
       },
       {
         path: '/square',
-        element: <h1>Площадь</h1>
+        element: <SquarePage />
       },
       {
         path: '/speed',

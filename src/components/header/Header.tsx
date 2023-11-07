@@ -22,14 +22,9 @@ export const Header = () => {
                      Вес и масса
                   </Button>
                </Link>
-               <Link to='valuta'>
-                  <Button colorScheme='red' variant='outline'>
-                     Курсы валют
-                  </Button>
-               </Link>
                <Link to='volume'>
                   <Button colorScheme='blue' variant='outline'>
-                     Объем и емкость
+                     Объем
                   </Button>
                </Link>
                <Link to='square'>

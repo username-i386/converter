@@ -2,7 +2,7 @@ import { Center, Heading, Icon, Input, Select, Stack } from "@chakra-ui/react"
 // import './index.css'
 import { useState } from "react"
 import { FaEquals } from 'react-icons/fa';
-import { RiScales2Fill } from 'react-icons/ri';
+import { BiSolidFlask } from 'react-icons/bi';
 
 export const VolumePage = () => {
 
@@ -1414,9 +1414,9 @@ export const VolumePage = () => {
    return (
       <div>
          <Center>
-            <Stack direction={"row"} align={'center'} spacing={6} >
-               <Heading className="title" as='h1' size='lg'>Вес и масса</Heading>
-               <Icon as={RiScales2Fill} boxSize={8} />
+            <Stack direction={"row"} align={'center'} spacing={3} >
+               <Heading className="title" as='h1' size='lg'>Объем</Heading>
+               <Icon as={BiSolidFlask} boxSize={8} />
             </Stack>
          </Center>
          <div className="converter">

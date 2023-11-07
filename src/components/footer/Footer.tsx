@@ -35,7 +35,7 @@ export const Footer = () => {
                </Link>
             </Stack>
          </Stack>
-         <Divider margin={'15px'} />
+         <Divider margin={'5px'} />
          <Stack align={'center'}>
             <Text align={'center'}>Используемые технологиии:</Text>
             <Stack direction={'row'} spacing={6} align={'end'}>

@@ -373,7 +373,7 @@ export const TemperaturePage = () => {
    return (
       <div>
          <Center>
-            <Stack direction={"row"} align={'center'} spacing={6} >
+            <Stack direction={"row"} align={'center'} spacing={3} >
                <Heading className="title" as='h1' size='lg'>Температура</Heading>
                <Icon as={FaTemperatureLow} boxSize={8} />
             </Stack>
