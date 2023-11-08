@@ -8,6 +8,8 @@ import { TemperaturePage } from './page/temperaturePage';
 import { MassPage } from './page/massPage';
 import { VolumePage } from './page/volumePage';
 import { SquarePage } from './page/squarePage';
+import { SpeedPage } from './page/speedPage';
+import { HomePage } from './page/HomePage';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
+        element: <HomePage />
+      },
+      {
+        path: '/temperature',
         element: <TemperaturePage />
       },
       {
@@ -32,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/speed',
-        element: <h1>Скорость бега</h1>
+        element: <SpeedPage />
       },
     ]
   }

@@ -1,18 +1,17 @@
 import { Button, Heading, Icon, Stack } from '@chakra-ui/react'
-import { HiOutlineScale } from 'react-icons/hi'
 import './Header.css'
 import { Link } from 'react-router-dom'
+import { Logo } from '../Logo'
 
 export const Header = () => {
    return (
       <header className='header'>
-         <div className='logo'>
-            <Heading>ATHENA</Heading>
-            <Icon as={HiOutlineScale} boxSize={10} />
-         </div>
+         <Link to='/'>
+            <Logo />
+         </Link>
          <div>
             <Stack direction='row' spacing={3} align='center'>
-               <Link to=''>
+               <Link to='temperature'>
                   <Button colorScheme='purple' variant='outline'>
                      Температура
                   </Button>
