@@ -16,3 +16,19 @@
   margin: 15px 0;
 }
 
+@media (max-width: 584px) {
+  .equalIcon {
+    display: none !important;
+  }
+
+  .athenaPalladaTitle {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .athenaAvatar {
+    width: 50% !important;;
+    height: 150px !important;;
+  }
+}
+

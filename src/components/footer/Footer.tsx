@@ -24,36 +24,40 @@ export const Footer = () => {
                </Text>
             </Stack>
             <Stack direction={'row'} spacing={3}>
-               <Link href="#">
+               <Link href="https://github.com/username-i386">
                   <Icon as={AiFillGithub} boxSize={7} />
                </Link>
-               <Link href="#">
+               {/* <Link href="#">
                   <Icon as={GrMail} boxSize={7} />
                </Link>
                <Link href="#">
                   <Icon as={BsTelegram} boxSize={7} />
-               </Link>
+               </Link> */}
             </Stack>
          </Stack>
          <Divider margin={'5px'} />
          <Stack align={'center'}>
             <Text align={'center'}>Используемые технологиии:</Text>
-            <Stack direction={'row'} spacing={6} align={'end'}>
-               <Stack align={'center'}>
-                  <Icon as={FaReact} boxSize={6} />
-                  <Text>React</Text>
+            <Stack direction={'row'} spacing={6} align={'end'} justify={'center'} wrap={'wrap'}>
+               <Stack>
+                  <Stack align={'center'}>
+                     <Icon as={FaReact} boxSize={6} color='#61dafb' />
+                     <Text>React</Text>
+                  </Stack>
+                  <Stack align={'center'}>
+                     <ReactRouterIcon boxSize={6} />
+                     <Text>React Router</Text>
+                  </Stack>
                </Stack>
-               <Stack align={'center'}>
-                  <ReactRouterIcon boxSize={6} />
-                  <Text>React Router</Text>
-               </Stack>
-               <Stack align={'center'}>
-                  <Icon as={BiLogoTypescript} boxSize={6} />
-                  <Text>Typescript</Text>
-               </Stack>
-               <Stack align={'center'}>
-                  <Icon as={SiChakraui} boxSize={6} />
-                  <Text>Chakra UI</Text>
+               <Stack>
+                  <Stack align={'center'}>
+                     <Icon as={BiLogoTypescript} boxSize={6} color='#3178C6' />
+                     <Text>Typescript</Text>
+                  </Stack>
+                  <Stack align={'center'}>
+                     <Icon as={SiChakraui} boxSize={6} color='#81E6D9' />
+                     <Text>Chakra UI</Text>
+                  </Stack>
                </Stack>
             </Stack>
          </Stack>

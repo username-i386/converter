@@ -230,7 +230,7 @@ export const SpeedPage = () => {
                   <option value={KNOT}>Узел</option>
                </Select>
             </Stack>
-            <Icon as={FaEquals} boxSize={6} />
+            <Icon as={FaEquals} boxSize={6} className="equalIcon" />
             <Stack className="inputNumber" spacing={0} direction={"column"} gap={0}>
                <Input placeholder='Введите число...'
                   type="number" 

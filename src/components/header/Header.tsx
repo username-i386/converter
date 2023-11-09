@@ -6,12 +6,12 @@ import { Logo } from '../Logo'
 export const Header = () => {
    return (
       <header className='header'>
-         <Link to='/'>
+         <Link to='/about_us'>
             <Logo />
          </Link>
          <div>
-            <Stack direction='row' spacing={3} align='center'>
-               <Link to='temperature'>
+            <Stack direction='row' spacing={3} align='center' wrap={'wrap'} justify={'center'}>
+               <Link to=''>
                   <Button colorScheme='purple' variant='outline'>
                      Температура
                   </Button>

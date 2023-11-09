@@ -18,11 +18,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <HomePage />
+        element: <TemperaturePage />
       },
       {
-        path: '/temperature',
-        element: <TemperaturePage />
+        path: '/about_us',
+        element: <HomePage />
       },
       {
         path: '/mass',
