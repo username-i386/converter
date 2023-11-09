@@ -5,7 +5,6 @@ import { BsTelegram } from 'react-icons/bs'
 import { FaReact } from 'react-icons/fa'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { SiChakraui } from 'react-icons/si'
-import '../../../public/react-router.svg'
 import { ReactRouterIcon } from './ReactRouterIcon'
 
 export const Footer = () => {
