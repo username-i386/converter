@@ -9,7 +9,6 @@ import { MassPage } from './page/massPage';
 import { VolumePage } from './page/volumePage';
 import { SquarePage } from './page/squarePage';
 import { SpeedPage } from './page/speedPage';
-import { HomePage } from './page/HomePage';
 
 const router = createBrowserRouter([
   {
@@ -19,10 +18,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <TemperaturePage />
-      },
-      {
-        path: '/about_us',
-        element: <HomePage />
       },
       {
         path: '/mass',

@@ -1,6 +1,6 @@
 import './Header.css'
 import { Link } from 'react-router-dom'
-import { Logo } from '../Logo'
+import { Logo } from './Logo'
 import { Menu } from './Menu'
 import { BurgerMenu } from './BurgerMenu'
 import { useMediaQuery } from '@chakra-ui/react'
